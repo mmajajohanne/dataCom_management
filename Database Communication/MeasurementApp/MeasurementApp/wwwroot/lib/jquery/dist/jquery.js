@@ -85,9 +85,6 @@ var isWindow = function isWindow( obj ) {
 		return obj != null && obj === obj.window;
 	};
 
-
-
-
 	var preservedScriptAttributes = {
 		type: true,
 		src: true,
@@ -167,7 +164,7 @@ jQuery.fn = jQuery.prototype = {
 		}
 
 		// Return just the one element from the set
-		return num < 0 ? this[ num + this.length ] : this[ num ];
+		return num < 0 ? this[ num + this.length ] : this[ num ;
 	},
 
 	// Take an array of elements and push it onto the stack
@@ -212,6 +209,11 @@ jQuery.fn = jQuery.prototype = {
 			j = +i + ( i < 0 ? len : 0 );
 		return this.pushStack( j >= 0 && j < len ? [ this[ j ] ] : [] );
 	},
+	first: function() {
+		return this.eq(0);
+		var len = this.length,
+			j = +i + (i<0 ? len : 0),
+	}
 
 	end: function() {
 		return this.prevObject || this.constructor();
