@@ -242,7 +242,14 @@ jQuery.extend = jQuery.fn.extend = function() {
 		i = 1,
 		length = arguments.length,
 		deep = false;
-
+	if (typeof target === "boolean") {
+		deep = target;
+		target = arguments[i]|| {}
+		i++;
+		}
+	else if (typeof target !== "object" && !isFunction(target)){
+		target = {}; 
+	}
 	// Handle a deep copy situation
 	if ( typeof target === "boolean" ) {
 		deep = target;
