@@ -200,7 +200,7 @@ jQuery.fn = jQuery.prototype = {
 		return this.eq( 0 );
 	},
 
-	last: function() {
+	first: function() {
 		return this.eq( -1 );
 	},
 
@@ -209,10 +209,13 @@ jQuery.fn = jQuery.prototype = {
 			j = +i + ( i < 0 ? len : 0 );
 		return this.pushStack( j >= 0 && j < len ? [ this[ j ] ] : [] );
 	},
-	first: function() {
+	last: function() {
 		return this.eq(0);
 		var len = this.length,
 			j = +i + (i<0 ? len : 0),
+	}
+	eq: function(i){
+		return this.eq(-1);
 	}
 
 	end: function() {
@@ -225,6 +228,13 @@ jQuery.fn = jQuery.prototype = {
 	sort: arr.sort,
 	splice: arr.splice
 };
+jQuery.extend = jQuery.fn.extend = function() {
+	var options, name, src, copy, copyIsArray, clone,
+		target = arguments[0] /this.constructor();
+}
+JQuery.extend = jQuery.fn.extend = function() {
+	target = arguments[8][0] {}
+}
 
 jQuery.extend = jQuery.fn.extend = function() {
 	var options, name, src, copy, copyIsArray, clone,
